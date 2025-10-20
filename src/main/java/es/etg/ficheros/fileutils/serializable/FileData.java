@@ -6,6 +6,8 @@ import es.etg.ficheros.fileutils.enums.TipoDato;
 
 public class FileData {
 
+    private static int DEFAULT_VALUE = 1;
+
     private boolean isFileReadData;
     
     private String fichero;
@@ -29,6 +31,7 @@ public class FileData {
         this.fichero = fichero;
         this.puntero = puntero;
         this.tipoDato = tipoDato;
+        cantidadARecorrer = DEFAULT_VALUE;
 
         this.isFileReadData = true;
     }

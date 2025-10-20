@@ -1,9 +1,9 @@
 package es.etg.ficheros.fileutils;
 
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.RandomAccessFile;
 
 import es.etg.ficheros.fileutils.serializable.FileData;
 
@@ -13,7 +13,7 @@ public class FileUtil {
 
     public static boolean escribirRandomFichero(FileData data)  {
 
-        try (DataOutputStream writer = new DataOutputStream(new FileOutputStream(data.getFichero()))) {
+        try (DataOutputStream writer = new DataOutputStream(new FileOutputStream(data.getFichero(), true))) {
             
             switch (data.getTipoDato()) {
 
@@ -39,25 +39,47 @@ public class FileUtil {
         }
     }
 
-    public static String leerRandomFichero(String fichero, int puntero, int cantidad, String tipo){
-
+    public static String leerRandomFichero(FileData data){
+    
         final String ERROR_VALUE = "";
         final String SALTO_LINEA = "\n";
 
-        try (DataInputStream reader = new DataInputStream(new FileInputStream(fichero))) {
+        File file = new File(data.getFichero());
+        if (!file.exists()) return ERROR_VALUE;
+
+        try (RandomAccessFile reader = new RandomAccessFile(file, "r")) {
             
             StringBuilder content = new StringBuilder();
 
-            switch (tipo) {
+            reader.seek(data.getPuntero());
 
-                case "string":
-                    
+            switch (data.getTipoDato()) {
 
+                case STRING:
+
+                    for (int i = 0; i < data.getCantidadARecorrer(); i++) {
+                        content.append(reader.readChar());
+                    }
 
                     break;
-            
+                case INT:
+
+                    for (int i = 0; i < data.getCantidadARecorrer(); i++) {
+                        content.append(reader.readInt());
+                    }
+
+                    break;
+
+                case FLOAT:
+
+                    for (int i = 0; i < data.getCantidadARecorrer(); i++) {
+                        content.append(reader.readFloat());
+                    }
+
+                    break;
                 default:
-                    break;
+                    return ERROR_VALUE;
+                    
             }
             
             return content.toString();
