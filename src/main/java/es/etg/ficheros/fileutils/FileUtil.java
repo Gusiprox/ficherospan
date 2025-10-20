@@ -1,19 +1,37 @@
 package es.etg.ficheros.fileutils;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import es.etg.ficheros.fileutils.serializable.FileData;
 
 public class FileUtil {
     
     private FileUtil(){}
 
-    public boolean escribirFichero(String fichero, String contenido)  {
+    public static boolean escribirRandomFichero(FileData data)  {
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fichero))) {
+        try (DataOutputStream writer = new DataOutputStream(new FileOutputStream(data.getFichero()))) {
             
-            writer.write(contenido);
+            switch (data.getTipoDato()) {
+
+                case STRING:
+                    writer.writeChars((String) data.getContenido());
+                    break;
+
+                case FLOAT:
+                    writer.writeFloat((Float) data.getContenido());
+                    break;
+
+                case INT:
+                    writer.writeInt((int) data.getContenido());
+                    break;
+
+                default: return false;
+            }
+
             return true;
 
         } catch (Exception e) {
@@ -21,17 +39,25 @@ public class FileUtil {
         }
     }
 
-    public String leerFichero(String fichero){
+    public static String leerRandomFichero(String fichero, int puntero, int cantidad, String tipo){
 
         final String ERROR_VALUE = "";
         final String SALTO_LINEA = "\n";
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(fichero))) {
+        try (DataInputStream reader = new DataInputStream(new FileInputStream(fichero))) {
             
             StringBuilder content = new StringBuilder();
 
-            while (reader.ready()) {
-                content.append(reader.readLine()).append(SALTO_LINEA);
+            switch (tipo) {
+
+                case "string":
+                    
+
+
+                    break;
+            
+                default:
+                    break;
             }
             
             return content.toString();
