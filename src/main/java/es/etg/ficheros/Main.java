@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.etg.ficheros.fileutils.CrearFicheroXML_EDLC;
 import es.etg.ficheros.fileutils.CrearFichero_EDLC;
 import es.etg.ficheros.fileutils.LeerFichero_EDLC;
 import es.etg.ficheros.fileutils.serializable.BarraPan;
@@ -24,6 +25,8 @@ public class Main {
         panes = LeerFichero_EDLC.read(carpeta);
 
         System.out.println(panes.get(1).getId());
+
+        CrearFicheroXML_EDLC.crear(carpeta);
 
 
     }

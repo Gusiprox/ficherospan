@@ -1,7 +1,5 @@
 package es.etg.ficheros.fileutils;
 
-import java.io.DataOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import es.etg.ficheros.fileutils.serializable.BarraPan;
