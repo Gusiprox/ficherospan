@@ -18,13 +18,15 @@ public class Main {
 
     public static void main(String[] args) throws IOException{
 
-        BarraPan pan = new BarraPan(1, "Baggete", "Artesanal", 5.3f, 15);
-        BarraPan pan2 = new BarraPan(2, "Algo", "Pollada", 1.3f, 85);
-        BarraPan pan3 = new BarraPan(3, "Algo2", "Pollada2", 6.3f, 105);
+        BarraPan pan1 = new BarraPan(1, "Chapata", "Poolish", 0.40f, 85);
+        BarraPan pan2 = new BarraPan(2, "Candeal", "Directo", 0.90f, 52);
+        BarraPan pan3 = new BarraPan(3, "Hogaza", "Masa Madre", 0.65f, 72);
+        BarraPan pan4 = new BarraPan(4, "Baguette", "Poolish", 0.60f, 70);
 
-        CrearFichero_EDLC.write(pan);
+        CrearFichero_EDLC.write(pan1);
         CrearFichero_EDLC.write(pan2);
         CrearFichero_EDLC.write(pan3);
+        CrearFichero_EDLC.write(pan4);
 
         List<BarraPan> panes = new ArrayList<>();
 
