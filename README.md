@@ -27,3 +27,9 @@
 **Tamaño**
 
 El tamaño de cada Barra De Pan sera de 4 + 40 + 80 + 4 + 4 = 132
+
+## Problemas
+
+Hay un fallo en el xml que la ultima de Agente de fermentacion, no se escribe bien, aunque si lo pruebas varias veces si sale, solo es con ese dato y la ultima asique no se cual es el fallo exactamente
+
+Falta la parte de SAX no sabia como implementarla 

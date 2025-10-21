@@ -18,13 +18,10 @@ import org.w3c.dom.Element;
 import es.etg.ficheros.fileutils.serializable.BarraPan;
 
 public class CrearFicheroXML_EDLC {
-    
-    //Haz otra clase que lea el archivo aleatorio y regrese un array de BarraPan, con esto aqui puedes hacer un foreach
-    //e ir colgando cada dato en el XML
 
     public static void crear(String xml){
 
-        final String NOMBRE_ARCHIVO_XML = "files/panes.xml";
+        final String NOMBRE_ARCHIVO_XML = "files/EDLC.xml";
 
         List<BarraPan> panes = new ArrayList<>();
 
@@ -64,9 +61,11 @@ public class CrearFicheroXML_EDLC {
         
         Element panElement = document.createElement("PAN");
         
-        panElement.setAttribute("id", String.valueOf(pan.getId()));
-        
         raiz.appendChild(panElement); 
+
+        Element id = document.createElement("ID");
+        id.setTextContent(String.valueOf(pan.getId()));
+        panElement.appendChild(id);
 
         Element nombre = document.createElement("NOMBRE");
         nombre.setTextContent(pan.getNombre());
