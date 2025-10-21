@@ -9,6 +9,7 @@ import es.etg.ficheros.fileutils.CrearFicheroXML_EDLC;
 import es.etg.ficheros.fileutils.CrearFichero_EDLC;
 import es.etg.ficheros.fileutils.LeerFicheroXML_EDLC;
 import es.etg.ficheros.fileutils.LeerFichero_EDLC;
+import es.etg.ficheros.fileutils.ModificarFichero_EDLC;
 import es.etg.ficheros.fileutils.serializable.BarraPan;
 
 public class Main {
@@ -37,6 +38,13 @@ public class Main {
         CrearFicheroXML_EDLC.crear(carpeta);
 
         System.out.println( LeerFicheroXML_EDLC.mostrarDOM(XML));
+
+        //Aqui cambio el valor asique en mostrarSAX el valor deberia ser diferente a lo instanciado asi como en el HTML
+        pan2.setAlveografia(0.4f);
+        pan2.setNombre("Candeal Defectuoso");
+        System.out.println(ModificarFichero_EDLC.modify(carpeta, 2, pan2));
+
+        System.out.println( LeerFicheroXML_EDLC.mostrarSAX(XML));
 
         ConvertirXSL.convertir();
 

@@ -1,14 +1,21 @@
 package es.etg.ficheros.fileutils;
 
 import java.io.File;
+import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import es.etg.ficheros.fileutils.sax.GestionContenido;
 
 
 public class LeerFicheroXML_EDLC {
@@ -66,6 +73,8 @@ public class LeerFicheroXML_EDLC {
 
     private static String getTagValue(String tag, Element element) {
 
+        final String ERROR_VALUE = "";
+
         NodeList nodeList = element.getElementsByTagName(tag);
         
         if (nodeList != null && nodeList.getLength() > 0) {
@@ -79,7 +88,28 @@ public class LeerFicheroXML_EDLC {
                 return textNodeList.item(0).getNodeValue();
             }
         }
-        return ""; // Devuelve cadena vacía si no se encuentra
+        return ERROR_VALUE;
     }
+
+    public static String mostrarSAX(String filePath) {
+
+        final String ERROR_VALUE = "";
+
+        try {
+
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser parser = factory.newSAXParser();
+
+            GestionContenido gestor = new GestionContenido();
+
+            parser.parse(filePath, gestor);
+
+            return parser.toString();
+
+        } catch (ParserConfigurationException | SAXException | IOException ex) {
+            return ERROR_VALUE;
+        }
+
+    }   
 
 }

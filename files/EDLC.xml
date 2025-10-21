@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PANES>
+    <PAN>
+        <ID>1</ID>
+        <NOMBRE>Chapata             </NOMBRE>
+        <FERMENTACION>Poolish                                 </FERMENTACION>
+        <ALVEOGRAFIA>0.4</ALVEOGRAFIA>
+        <HIDRATACION>85</HIDRATACION>
+    </PAN>
+    <PAN>
+        <ID>2</ID>
+        <NOMBRE>Candeal             </NOMBRE>
+        <FERMENTACION>Directo                                 </FERMENTACION>
+        <ALVEOGRAFIA>0.9</ALVEOGRAFIA>
+        <HIDRATACION>52</HIDRATACION>
+    </PAN>
+    <PAN>
+        <ID>3</ID>
+        <NOMBRE>Hogaza              </NOMBRE>
+        <FERMENTACION>Masa Madre                              </FERMENTACION>
+        <ALVEOGRAFIA>0.65</ALVEOGRAFIA>
+        <HIDRATACION>72</HIDRATACION>
+    </PAN>
+    <PAN>
+        <ID>4</ID>
+        <NOMBRE>Baguette            </NOMBRE>
+        <FERMENTACION>                                        </FERMENTACION>
+        <ALVEOGRAFIA>0.6</ALVEOGRAFIA>
+        <HIDRATACION>70</HIDRATACION>
+    </PAN>
+</PANES>

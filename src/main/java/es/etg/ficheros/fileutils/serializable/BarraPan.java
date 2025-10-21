@@ -80,4 +80,8 @@ public class BarraPan{
         this.hidratacion = hidratacion;
     }
 
+    public int getBytesUsados(){
+        return 132;
+    }
+
 }

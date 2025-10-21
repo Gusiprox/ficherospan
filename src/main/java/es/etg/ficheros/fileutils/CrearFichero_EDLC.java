@@ -11,8 +11,6 @@ public class CrearFichero_EDLC {
 
         final String FICHERO = "files/panes.dat";
 
-        //DataOutputStream os = new DataOutputStream(new FileOutputStream(FICHERO, true));
-
         FileData data = new FileData(FICHERO, pan.getId());
         finalWrite(data);
 

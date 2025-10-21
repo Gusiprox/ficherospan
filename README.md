@@ -40,7 +40,7 @@ ejemplo: `BarraPan pan1 = new BarraPan(1, "Chapata", "Poolish", 0.40f, 85);`
 
 ### ModificarFichero_EDLC.java
 
->No implementado por falta de tiempo
+>Implementado pero no me da tiempo a la documentación
 
 
 ### CrearFicheroXML_EDLC.java
@@ -57,7 +57,9 @@ Usando el DOM
 ejemplo: `LeerFicheroXML_EDLC.mostrarDOM(XML)`
 
 Usando el SAX
-> No hubo tiempo
+Ejemplo: `LeerFicheroXML_EDLC.mostrarSAX(XML)`
+
+>Como se puede ver es lo mismo pero cambiando el mostrarDOM por mostrarSAX, es mas rapido pero su usabilidad es mucho peor que con DOM
 
 ### XSLT a HTML
 
