@@ -83,6 +83,10 @@ public class FileData {
     public void setPuntero(int puntero){
         this.puntero = puntero;
     }
+    public void movePuntero(int posiciones){
+
+        this.puntero += posiciones;
+    }
     public void setCantidadARecorrer(int cantidadARecorrer){
         this.cantidadARecorrer = cantidadARecorrer;
     }

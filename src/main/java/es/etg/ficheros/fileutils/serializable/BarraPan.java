@@ -1,8 +1,6 @@
 package es.etg.ficheros.fileutils.serializable;
 
-import java.io.Serializable;
-
-public class BarraPan implements Serializable{
+public class BarraPan{
     
     final static int NUMBER_OF_NOMBRE = 20;
     final static int NUMBER_OF_FERMENT = 40;
@@ -23,7 +21,7 @@ public class BarraPan implements Serializable{
 
     private String parseToExactNumber(String toParse, int numChars){
 
-        final String FILL_VALUE = "";
+        final String FILL_VALUE = " ";
 
         if (toParse.length() == numChars) {
             return toParse;

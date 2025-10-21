@@ -23,3 +23,7 @@
 - `hidratacion` es el pocentaje de liquido comparado a lo solido que le pones a la hora de hacer el pan, es un numerico int.
 
 >El agente de fermentacion tiene su propio porcentaje de hidratacion, esto es importante porque no es informacion repetida
+
+**Tamaño**
+
+El tamaño de cada Barra De Pan sera de 4 + 40 + 80 + 4 + 4 = 132

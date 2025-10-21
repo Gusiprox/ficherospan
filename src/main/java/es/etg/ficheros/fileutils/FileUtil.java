@@ -42,7 +42,6 @@ public class FileUtil {
     public static String leerRandomFichero(FileData data){
     
         final String ERROR_VALUE = "";
-        final String SALTO_LINEA = "\n";
 
         File file = new File(data.getFichero());
         if (!file.exists()) return ERROR_VALUE;
@@ -87,5 +86,19 @@ public class FileUtil {
         } catch (Exception e) {
             return ERROR_VALUE;
         }
+    }
+
+    public static long getNumBytes(String fichero){
+
+        final long ERROR_VALUE = 0;
+
+        File file = new File(fichero);
+
+        if (file.exists()) {
+            return file.length();
+        } else {
+            return ERROR_VALUE;
+        }
+
     }
 }
